@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hermann GOLO | Portfolio - Ingénieur Logiciel</title>
+    <meta name="description" content="Hermann Kekeil GOLO - Expert en développement d'applications web performantes avec Elixir & Phoenix, et en solutions data-driven avec Python & Flutter">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'gradient': 'gradient 8s linear infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                        'bounce-slow': 'bounce 3s infinite',
+                        'pulse-slow': 'pulse 4s infinite',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-900 text-white font-sans overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+                    Hermann GOLO
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#accueil" class="nav-link hover:text-blue-400 transition-colors duration-300">Accueil</a>
+                    <a href="#apropos" class="nav-link hover:text-blue-400 transition-colors duration-300">À Propos</a>
+                    <a href="#projets" class="nav-link hover:text-blue-400 transition-colors duration-300">Projets</a>
+                    <a href="#contact" class="nav-link hover:text-blue-400 transition-colors duration-300">Contact</a>
+                </div>
+                <button class="md:hidden text-white hover:text-blue-400" id="menu-toggle">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden bg-gray-800 border-t border-gray-700 hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#accueil" class="block px-3 py-2 text-white hover:text-blue-400">Accueil</a>
+                <a href="#apropos" class="block px-3 py-2 text-white hover:text-blue-400">À Propos</a>
+                <a href="#projets" class="block px-3 py-2 text-white hover:text-blue-400">Projets</a>
+                <a href="#contact" class="block px-3 py-2 text-white hover:text-blue-400">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-cyan-600/20"></div>
+            <img src="https://images.unsplash.com/photo-1591439657848-9f4b9ce436b9" alt="Developer workspace" class="w-full h-full object-cover opacity-30">
+        </div>
+        
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-4">
+            <div class="mb-8">
+                <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-blue-400 shadow-2xl animate-float">
+                    <img src="https://images.unsplash.com/photo-1610631066894-62452ccb927c" alt="Hermann GOLO" class="w-full h-full object-cover">
+                </div>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent animate-gradient">
+                Hermann Kekeil GOLO
+            </h1>
+            
+            <div class="text-xl md:text-2xl text-gray-300 mb-2 flex items-center justify-center">
+                <i class="fas fa-laptop-code mr-3 text-blue-400"></i>
+                <span class="font-semibold">💻 Hlabs</span>
+            </div>
+            
+            <p class="text-2xl md:text-3xl font-light text-blue-300 mb-8">
+                Ingénieur Logiciel
+            </p>
+            
+            <p class="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+                Expert en développement d'applications web performantes avec 
+                <span class="text-purple-400 font-semibold">Elixir & Phoenix</span>, 
+                et en solutions data-driven avec 
+                <span class="text-blue-400 font-semibold">Python & Flutter</span>
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#projets" class="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-4 rounded-full text-white font-semibold transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                    <i class="fas fa-code mr-2"></i>
+                    Voir mes projets
+                    <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                </a>
+                <a href="#contact" class="border-2 border-blue-400 hover:bg-blue-400 hover:text-gray-900 px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-envelope mr-2"></i>
+                    Me contacter
+                </a>
+            </div>
+        </div>
+        
+        <!-- Floating elements -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-blue-500/20 rounded-full animate-bounce-slow"></div>
+        <div class="absolute bottom-20 right-10 w-16 h-16 bg-purple-500/20 rounded-full animate-pulse-slow"></div>
+        <div class="absolute top-1/2 left-20 w-12 h-12 bg-cyan-500/20 rounded-full animate-float"></div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="apropos" class="py-20 bg-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+                    Technologies & Expertise
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Un ensemble diversifié de technologies modernes pour des solutions performantes
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Backend -->
+                <div class="bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 hover:border-blue-500 transition-all duration-300 transform hover:scale-105">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-server text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-blue-400">Backend</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                            <span>Python & Django/FastAPI</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                            <span>Node.js & Express</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                            <span>Elixir & Phoenix LiveView</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                            <span>PostgreSQL & MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Frontend -->
+                <div class="bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 hover:border-purple-500 transition-all duration-300 transform hover:scale-105">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-desktop text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-purple-400">Frontend</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                            <span>Angular & Vue.js</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                            <span>Flutter & Dart</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                            <span>TailwindCSS & Alpine.js</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                            <span>HTML5 & CSS3</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Data -->
+                <div class="bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 hover:border-cyan-500 transition-all duration-300 transform hover:scale-105">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-r from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-chart-line text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-cyan-400">Data</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                            <span>Machine Learning & IA</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                            <span>Data Engineering</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                            <span>Data Visualization</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                            <span>Business Intelligence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projets" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+                    Projets en vedette
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Découvrez une sélection de mes projets les plus significatifs
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="group bg-gray-800/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700 hover:border-blue-500 transition-all duration-500 transform hover:scale-105">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3" alt="Portfolio" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-blue-400">Portfolio Professionnel</h3>
+                        <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                            Ce portfolio moderne a été développé **From scratch** et **Manuellement** en utilisant Elixir et Phoenix LiveView pour une expérience utilisateur fluide et interactive.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-purple-600/20 text-purple-300 rounded-full text-xs">Elixir</span>
+                            <span class="px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full text-xs">Phoenix LiveView</span>
+                            <span class="px-3 py-1 bg-cyan-600/20 text-cyan-300 rounded-full text-xs">TailwindCSS</span>
+                            <span class="px-3 py-1 bg-gray-600/20 text-gray-300 rounded-full text-xs">Docker</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-sm text-gray-400">
+                                <i class="fas fa-heart mr-1"></i>
+                                <span class="mr-4">0</span>
+                                <i class="fas fa-eye mr-1"></i>
+                                <span>0</span>
+                            </div>
+                            <button class="text-blue-400 hover:text-blue-300 font-semibold text-sm">
+                                Voir les détails →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group bg-gray-800/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700 hover:border-purple-500 transition-all duration-500 transform hover:scale-105">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1652721367098-0ecad4cc0370" alt="FastSMS" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-purple-400">FastSMS</h3>
+                        <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                            Plateforme de gestion de contacts, de groupes et d'envoi de SMS programmés avec personnalisation dynamique et gestion avancée.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-purple-600/20 text-purple-300 rounded-full text-xs">Elixir</span>
+                            <span class="px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full text-xs">Phoenix</span>
+                            <span class="px-3 py-1 bg-cyan-600/20 text-cyan-300 rounded-full text-xs">Phoenix LiveView</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-sm text-gray-400">
+                                <i class="fas fa-heart mr-1"></i>
+                                <span class="mr-4">0</span>
+                                <i class="fas fa-eye mr-1"></i>
+                                <span>0</span>
+                            </div>
+                            <button class="text-purple-400 hover:text-purple-300 font-semibold text-sm">
+                                Voir les détails →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group bg-gray-800/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700 hover:border-cyan-500 transition-all duration-500 transform hover:scale-105">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.pexels.com/photos/16053029/pexels-photo-16053029.jpeg" alt="Flutter App" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-cyan-400">App Flutter de gestion de stock</h3>
+                        <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                            Application mobile offline-first permettant à un commerçant de gérer ses produits, ventes, comptabilité, avec synchronisation cloud.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full text-xs">Flutter</span>
+                            <span class="px-3 py-1 bg-orange-600/20 text-orange-300 rounded-full text-xs">ObjectBox</span>
+                            <span class="px-3 py-1 bg-green-600/20 text-green-300 rounded-full text-xs">Google Drive</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-sm text-gray-400">
+                                <i class="fas fa-heart mr-1"></i>
+                                <span class="mr-4">0</span>
+                                <i class="fas fa-eye mr-1"></i>
+                                <span>0</span>
+                            </div>
+                            <button class="text-cyan-400 hover:text-cyan-300 font-semibold text-sm">
+                                Voir les détails →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="group bg-gray-800/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700 hover:border-blue-500 transition-all duration-500 transform hover:scale-105">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1700498466261-824cbd01974e" alt="OIFFPL" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-blue-400">OIFFPL - Prix des 5 Continent</h3>
+                        <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                            Plateforme de gestion des concours de littérature pour l'OIF, dénommée Prix des 5 Continents, permettant la création, la soumission et l'évaluation des œuvres.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-yellow-600/20 text-yellow-300 rounded-full text-xs">Python</span>
+                            <span class="px-3 py-1 bg-green-600/20 text-green-300 rounded-full text-xs">Vue.js</span>
+                            <span class="px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full text-xs">PostgreSQL</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-sm text-gray-400">
+                                <i class="fas fa-heart mr-1"></i>
+                                <span class="mr-4">0</span>
+                                <i class="fas fa-eye mr-1"></i>
+                                <span>0</span>
+                            </div>
+                            <button class="text-blue-400 hover:text-blue-300 font-semibold text-sm">
+                                Voir les détails →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="group bg-gray-800/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700 hover:border-red-500 transition-all duration-500 transform hover:scale-105">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.pexels.com/photos/5475750/pexels-photo-5475750.jpeg" alt="SGF Sénégal" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-red-400">SGF Sénégal</h3>
+                        <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                            Système de Gestion Foncière pour la DGID du Sénégal facilitant l'enregistrement UX/UI, développement front-end et back-end avec architecture microservices.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-red-600/20 text-red-300 rounded-full text-xs">Angular</span>
+                            <span class="px-3 py-1 bg-green-600/20 text-green-300 rounded-full text-xs">SpringBoot</span>
+                            <span class="px-3 py-1 bg-purple-600/20 text-purple-300 rounded-full text-xs">Camunda</span>
+                            <span class="px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full text-xs">MyBatis</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-sm text-gray-400">
+                                <i class="fas fa-heart mr-1"></i>
+                                <span class="mr-4">0</span>
+                                <i class="fas fa-eye mr-1"></i>
+                                <span>0</span>
+                            </div>
+                            <button class="text-red-400 hover:text-red-300 font-semibold text-sm">
+                                Voir les détails →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="group bg-gray-800/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700 hover:border-green-500 transition-all duration-500 transform hover:scale-105">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.pexels.com/photos/443413/pexels-photo-443413.jpeg" alt="Tarificateur" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-green-400">Tarificateur Intelligent pour Sanlam Allianz</h3>
+                        <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                            Modèle de prédiction des prix primes d'assurance déployé dans un backend API REST pour automatiser la tarification avec interface utilisateur moderne.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-purple-600/20 text-purple-300 rounded-full text-xs">Machine Learning</span>
+                            <span class="px-3 py-1 bg-green-600/20 text-green-300 rounded-full text-xs">FastAPI</span>
+                            <span class="px-3 py-1 bg-red-600/20 text-red-300 rounded-full text-xs">Streamlit</span>
+                            <span class="px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full text-xs">PostgreSQL</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-sm text-gray-400">
+                                <i class="fas fa-heart mr-1"></i>
+                                <span class="mr-4">0</span>
+                                <i class="fas fa-eye mr-1"></i>
+                                <span>0</span>
+                            </div>
+                            <button class="text-green-400 hover:text-green-300 font-semibold text-sm">
+                                Voir les détails →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-4 rounded-full text-white font-semibold transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                    À propos de Hermann →
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900/50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+                Travaillons ensemble
+            </h2>
+            <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+                Vous avez un projet en tête ? N'hésitez pas à me contacter pour discuter de vos besoins en développement.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="flex flex-col items-center p-6 bg-gray-800/50 rounded-2xl border border-gray-700 hover:border-blue-500 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-envelope text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Email</h3>
+                    <p class="text-gray-400">hermann.golo@example.com</p>
+                </div>
+                
+                <div class="flex flex-col items-center p-6 bg-gray-800/50 rounded-2xl border border-gray-700 hover:border-purple-500 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center mb-4">
+                        <i class="fab fa-linkedin text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">LinkedIn</h3>
+                    <p class="text-gray-400">hermann-golo</p>
+                </div>
+                
+                <div class="flex flex-col items-center p-6 bg-gray-800/50 rounded-2xl border border-gray-700 hover:border-cyan-500 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center mb-4">
+                        <i class="fab fa-github text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">GitHub</h3>
+                    <p class="text-gray-400">hermann-golo</p>
+                </div>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="mailto:hermann.golo@example.com" class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-4 rounded-full text-white font-semibold transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                    <i class="fas fa-envelope mr-2"></i>
+                    Envoyer un email
+                </a>
+                <a href="#" class="border-2 border-blue-400 hover:bg-blue-400 hover:text-gray-900 px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-download mr-2"></i>
+                    Télécharger CV
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-2">
+                    <h3 class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent mb-4">
+                        Hermann GOLO
+                    </h3>
+                    <p class="text-gray-400 mb-4 max-w-md">
+                        Expert en développement full-stack et data engineering, passionné par l'innovation technologique.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-linkedin text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded-full flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-github text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-red-600 hover:bg-red-700 rounded-full flex items-center justify-center transition-colors duration-300">
+                            <i class="fas fa-envelope text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Navigation</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#accueil" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Accueil</a></li>
+                        <li><a href="#apropos" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">À Propos</a></li>
+                        <li><a href="#projets" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Projets</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Liens Rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">CV</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Projets</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Articles</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Me contacter</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 Hermann GOLO. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
